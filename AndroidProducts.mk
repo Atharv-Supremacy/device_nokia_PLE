@@ -15,9 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/arrow_land.mk
+    $(LOCAL_DIR)/arrow_PLE.mk
 
 COMMON_LUNCH_CHOICES := \
-    arrow_land-user \
-    arrow_land-userdebug \
-    arrow_land-eng
+    arrow_PLE-user \
+    arrow_PLE-userdebug \
+    arrow_PLE-eng

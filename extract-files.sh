@@ -9,7 +9,7 @@
 set -e
 
 DEVICE=land
-VENDOR=xiaomi
+VENDOR=nokia
 
 # Load extractutils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"

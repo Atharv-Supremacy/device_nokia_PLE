@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-DEVICE_PATH := device/xiaomi/land
+DEVICE_PATH := device/nokia/PLE
 
 # Architecture
 TARGET_ARCH := arm64
@@ -44,14 +44,15 @@ TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
 # kernel
 BOARD_KERNEL_BASE		:= 0x80000000
-BOARD_KERNEL_CMDLINE 		:= androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 androidboot.bootdevice=7824900.sdhci earlycon=msm_hsl_uart,0x78B0000 androidboot.usbconfigfs=false loop.max_part=7
-# BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE 		:= console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 androidboot.bootdevice=7824900.sdhci earlycon=msm_hsl_uart,0x78B0000 firmware_class.path=/vendor/firmware_mnt/image loop.max_part=7 loglevel=0 buildvariant=user veritykeyid=id:8f56f02c61394639f13af4e8cfe02d087e41b936
+BOARD_KERNEL_CMDLINE            += androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE            += androidboot.usbconfigfs=true
 BOARD_KERNEL_IMAGE_NAME 	:= Image.gz-dtb
 BOARD_KERNEL_PAGESIZE 		:=  2048
 BOARD_MKBOOTIMG_ARGS 		:= --ramdisk_offset 0x01000000 --second_offset 0x00f00000 --tags_offset 0x00000100
 TARGET_COMPILE_WITH_MSM_KERNEL := true
-TARGET_KERNEL_CONFIG 		:= land_defconfig
-TARGET_KERNEL_SOURCE 		:= kernel/xiaomi/msm8937
+TARGET_KERNEL_CONFIG 		:= PLE_defconfig
+TARGET_KERNEL_SOURCE 		:= kernel/nokia/PLE
 TARGET_KERNEL_VERSION         := 4.9
 TARGET_KERNEL_CLANG_COMPILE     := true
 
@@ -139,8 +140,8 @@ DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
 HWUI_COMPILE_FOR_PERF := true
 
 # Init
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_land
-TARGET_RECOVERY_DEVICE_MODULES := libinit_land
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_PLE
+TARGET_RECOVERY_DEVICE_MODULES := libinit_PLE
 
 # Keystore
 TARGET_PROVIDES_KEYMASTER := true
@@ -208,4 +209,4 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 
 # Inherit the proprietary files
--include vendor/xiaomi/land/BoardConfigVendor.mk
+-include vendor/nokia/PLE/BoardConfigVendor.mk

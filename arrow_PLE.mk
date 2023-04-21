@@ -22,7 +22,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_m.mk)
 # Inherit some common from Octavi OS Project stuff
 $(call inherit-product, vendor/arrow/config/common.mk)
 
-# Inherit from land device
+# Inherit from PLE device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
 # Bootanimation
@@ -46,18 +46,18 @@ TARGET_SUPPORTS_GOOGLE_RECORDER := false
 TARGET_INCLUDE_LIVE_WALLPAPERS := false
 
 # Device identifier
-PRODUCT_DEVICE := land
-PRODUCT_NAME := arrow_land
-PRODUCT_BRAND := Xiaomi
-PRODUCT_MODEL := Redmi 3S
+PRODUCT_DEVICE := PLE
+PRODUCT_NAME := arrow_PLE
+PRODUCT_BRAND := Nokia
+PRODUCT_MODEL := Nokia 6 
 PRODUCT_MANUFACTURER := Xiaomi
-TARGET_VENDOR := Xiaomi
-BOARD_VENDOR := Xiaomi
+TARGET_VENDOR := Nokia
+BOARD_VENDOR := Nokia
 
-PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
+PRODUCT_GMS_CLIENTID_BASE := android-nokia
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="land-user 6.0.1 MMB29M V10.2.2.0.MALMIXM release-keys"
+    PRIVATE_BUILD_DESC="TA-1021_00WW-user 9 PKQ1.181105.001 00WW_6_19F release-keys"
 
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
-BUILD_FINGERPRINT := "Xiaomi/land/land:6.0.1/MMB29M/V10.2.2.0.MALMIXM:user/release-keys"
+BUILD_FINGERPRINT := "Nokia/TA-1021_00WW/PLE:9/PKQ1.181105.001/00WW_6_19F:user/release-keys"
